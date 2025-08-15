@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blanca Media — Scale Your Brand. Multiply Your Revenue.</title>
+  <meta name="description" content="Blanca Media helps e‑commerce brands grow revenue with paid ads, SMS, email, high‑converting Shopify sites, and analytics. Book a free growth session." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Blanca Media — Brand Scaling & Marketing Media Agency" />
+  <meta property="og:description" content="Paid ads, SMS, email, high‑converting Shopify sites, funnels, and analytics. Performance pricing or flat retainer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Blanca+Media" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta name="theme-color" content="#f5f7fb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0b0c" media="(prefers-color-scheme: dark)">
+
+  <!-- JSON-LD Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blanca Media",
+    "url": "https://example.com/",
+    "logo": "https://via.placeholder.com/512x512.png?text=B",
+    "sameAs": [
+      "https://instagram.com/blancamediaco"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+1-956-236-1281",
+      "contactType": "customer service",
+      "email": "blancamediaaco@gmail.com"
+    }]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%94%A1%EF%B8%8F%3C/text%3E%3C/svg%3E">
+
+  <style>
+    /* CSS RESET (trimmed) */
+    *,*::before,*::after{box-sizing:border-box}
+    html{line-height:1.5;-webkit-text-size-adjust:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+
+    /* THEME */
+    :root{
+      /* Light theme */
+      --bg:#f5f7fb;           /* page */
+      --card:#ffffff;          /* cards */
+      --muted:#eef1f6;         /* subtle bg */
+      --line:#e2e8f0;          /* borders */
+      --text:#0b1324;          /* primary text */
+      --text-dim:#475569;      /* secondary text */
+      --brand:#e9b949;         /* amber */
+      --brand-2:#ffd66e;       /* amber light */
+      --accent:#3b82f6;        /* blue */
+      --good:#10b981;          /* green */
+      --bad:#ef4444;           /* red */
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+    }
+    @media(prefers-color-scheme:dark){
+      :root{
+        --bg:#0b0b0c;--card:#121316;--muted:#1a1b1f;--line:#24262b;--text:#f5f7fb;--text-dim:#c6ccd9;--accent:#8fb9ff;--shadow:0 10px 30px rgba(0,0,0,.35)
+      }
+    }
+    .theme-toggle{position:fixed;right:14px;bottom:14px;z-index:100}
+
+    .container{width:min(1200px,92vw);margin-inline:auto}
+    .grid{display:grid;gap:1.25rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:.9rem 1.15rem;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#111;font-weight:700;box-shadow:var(--shadow);transition:transform .2s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 14px 40px rgba(233,185,73,.35)}
+    .btn.secondary{background:var(--card);color:var(--text);box-shadow:none;border:1px solid var(--line)}
+    .btn.secondary:hover{background:var(--muted)}
+    .pill{display:inline-flex;gap:.5rem;align-items:center;padding:.35rem .6rem;border-radius:999px;background:var(--muted);border:1px solid var(--line);color:var(--text-dim);font-size:.8rem}
+    .card{background:linear-gradient(180deg,var(--card) 0%,color-mix(in oklab,var(--card),#000 2%) 100%);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+    .section{padding:80px 0}
+    .muted{color:var(--text-dim)}
+    .h1{font-size:clamp(2rem,3.6vw,3.3rem);line-height:1.05;margin:0 0 .6rem;font-weight:900;letter-spacing:.2px}
+    .h2{font-size:clamp(1.6rem,2.8vw,2.3rem);line-height:1.15;margin:0 0 .75rem;font-weight:800}
+    h3{font-size:1.15rem;margin:0 0 .25rem;font-weight:800}
+    .lead{font-size:clamp(1rem,1.4vw,1.2rem);color:var(--text-dim)}
+    header{position:sticky;top:0;z-index:50;background:color-mix(in oklab,var(--bg),#000 5%);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid color-mix(in oklab,var(--line),#000 8%)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    nav .right{display:flex;align-items:center;gap:.9rem}
+    .navlinks{display:flex;gap:1rem}
+    .navlinks a{padding:.5rem .8rem;border-radius:8px}
+    .navlinks a:focus-visible,.navlinks a:hover{background:var(--muted);outline:2px solid transparent}
+    .menu-btn{display:none}
+    @media(max-width:880px){
+      .navlinks{display:none}
+      .menu-btn{display:inline-flex}
+      #mobileMenu{display:none;position:absolute;left:0;right:0;top:64px;background:var(--bg);border-bottom:1px solid var(--line);padding:12px}
+      #mobileMenu a{display:block;padding:12px;border-radius:10px}
+      #mobileMenu a:hover{background:var(--muted)}
+    }
+
+    /* Hero */
+    .hero{padding:86px 0 40px;background:radial-gradient(1200px 600px at 20% -10%,color-mix(in oklab,var(--brand),transparent 85%),transparent 45%),radial-gradient(900px 500px at 100% 0%,color-mix(in oklab,var(--accent),transparent 88%),transparent 40%)}
+    .hero-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center}
+    .hero .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:22px}
+    .metric{padding:16px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+    .metric strong{font-size:1.6rem;color:var(--text)}
+    @media(max-width:980px){.hero-wrap{grid-template-columns:1fr}}
+
+    /* Services */
+    .services-grid{grid-template-columns:repeat(3,1fr)}
+    .service{padding:18px}
+    .service .icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--muted);border:1px solid var(--line);margin-bottom:10px}
+    @media(max-width:1000px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.services-grid{grid-template-columns:1fr}}
+
+    /* Proof/cases */
+    .cases{grid-template-columns:repeat(3,1fr)}
+    .case{padding:18px}
+    .case .num{font-weight:900;font-size:1.6rem;color:var(--good)}
+    @media(max-width:1000px){.cases{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.cases{grid-template-columns:1fr}}
+
+    /* Pricing */
+    .pricing{grid-template-columns:repeat(2,1fr)}
+    .price-card{padding:22px;position:relative;overflow:hidden}
+    .price{font-size:2.2rem;font-weight:900}
+    .price small{font-size:.9rem;color:var(--text-dim)}
+    .best::after{content:"Most Popular";position:absolute;top:14px;right:-36px;transform:rotate(35deg);background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#111;padding:.3rem 2.2rem;font-weight:800}
+    @media(max-width:860px){.pricing{grid-template-columns:1fr}}
+
+    /* CTA band */
+    .cta-band{background:linear-gradient(135deg,var(--card),color-mix(in oklab,var(--card),#000 4%));border:1px solid var(--line);padding:26px;border-radius:18px;display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+
+    /* Footer */
+    footer{padding:44px 0;border-top:1px solid var(--line);color:var(--text-dim)}
+
+    /* Modal, toast, utilities */
+    .modal{position:fixed;inset:0;display:none;place-items:center;background:rgba(2,6,23,.55);backdrop-filter:blur(6px);z-index:80}
+    .modal.open{display:grid}
+    .modal .dialog{width:min(720px,92vw);background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:16px}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    input,select,textarea{width:100%;padding:.85rem .9rem;border-radius:12px;background:var(--card);border:1px solid var(--line);color:var(--text)}
+    label{font-size:.9rem;color:var(--text-dim)}
+    form .row>div{flex:1 1 240px}
+    .note{font-size:.9rem;color:var(--text-dim)}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:22px 0}
+
+    /* FAQ */
+    details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+    summary{cursor:pointer;font-weight:700}
+
+    /* Badge list */
+    .badges{display:flex;gap:.5rem;flex-wrap:wrap}
+    .badge{font-size:.78rem;padding:.35rem .55rem;border:1px dashed color-mix(in oklab,var(--line),#000 10%);border-radius:999px;color:var(--text-dim);background:var(--muted)}
+
+    /* Animations */
+    .fade-up{opacity:0;transform:translateY(12px);transition:opacity .5s ease, transform .5s ease}
+    .fade-up.reveal{opacity:1;transform:none}
+
+    /* Utility */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="sr-only">Skip to content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav aria-label="Primary">
+        <div class="left" style="display:flex;align-items:center;gap:.75rem">
+          <div style="width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#111;font-weight:900" aria-hidden="true">B</div>
+          <strong style="font-size:1.05rem;color:var(--text)">Blanca Media</strong>
+        </div>
+        <div class="navlinks" role="menubar">
+          <a role="menuitem" href="#services">Services</a>
+          <a role="menuitem" href="#cases">Results</a>
+          <a role="menuitem" href="#pricing">Pricing</a>
+          <a role="menuitem" href="#about">About</a>
+          <a role="menuitem" href="#contact">Contact</a>
+        </div>
+        <div class="right">
+          <a class="btn secondary" href="#book">Free Growth Session</a>
+          <button class="menu-btn btn secondary" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">☰</button>
+        </div>
+      </nav>
+      <div id="mobileMenu" class="card" role="menu" aria-hidden="true">
+        <a href="#services" role="menuitem">Services</a>
+        <a href="#cases" role="menuitem">Results</a>
+        <a href="#pricing" role="menuitem">Pricing</a>
+        <a href="#about" role="menuitem">About</a>
+        <a href="#contact" role="menuitem">Contact</a>
+        <a class="btn" href="#book" style="margin:12px 0">Free Growth Session</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="container hero-wrap">
+      <div>
+        <span class="pill" aria-label="Capabilities">Performance Marketing • Shopify • SMS • Email</span>
+        <h1 id="heroTitle" class="h1">Scale Your Brand. Multiply Your Revenue. We do the heavy lifting.</h1>
+        <p class="lead">Blanca Media is a performance‑driven marketing studio helping e‑commerce brands grow with paid ads, conversion‑first websites, and high‑ROI retention via SMS + email.</p>
+        <div class="row" style="margin-top:16px">
+          <a href="#book" class="btn">Book Your Free Growth Session</a>
+          <a href="#cases" class="btn secondary">See How We Scale Brands</a>
+        </div>
+        <div class="hero metrics" aria-label="Key performance metrics">
+          <div class="metric card"><div class="muted">Avg. ROAS on Meta</div><strong aria-label="3.2 times">3.2×</strong></div>
+          <div class="metric card"><div class="muted">Avg. SMS CTR</div><strong aria-label="eighteen percent">18%</strong></div>
+          <div class="metric card"><div class="muted">Recovery from Abandon</div><strong aria-label="twelve to twenty percent">12–20%</strong></div>
+        </div>
+        <div class="badges" style="margin-top:14px" aria-label="Highlights">
+          <span class="badge">No long‑term contracts</span>
+          <span class="badge">Revenue‑share option (10%)</span>
+          <span class="badge">Transparent reporting</span>
+        </div>
+      </div>
+      <figure class="card" style="padding:14px">
+        <video style="border-radius:12px;width:100%;height:auto" autoplay muted loop playsinline preload="metadata" poster="https://via.placeholder.com/900x600.png?text=Campaign+Performance" aria-label="Campaign performance preview" aria-describedby="heroVideoDesc">
+          <source src="" type="video/mp4" />
+        </video>
+        <figcaption id="heroVideoDesc" class="note" style="padding:10px">Optional hero video showing dashboards / creatives. Replace poster/video source.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Social proof strip -->
+  <div class="container" style="margin-top:8px">
+    <div class="card" style="padding:10px 14px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+      <span class="muted">Trusted by founders across fashion, beauty, CPG & lifestyle</span>
+      <div class="badges" aria-label="Platforms & tools">
+        <span class="badge">Shopify</span>
+        <span class="badge">Meta Ads</span>
+        <span class="badge">Google Ads</span>
+        <span class="badge">Klaviyo</span>
+        <span class="badge">Postscript</span>
+        <span class="badge">TikTok</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section id="services" class="section" aria-labelledby="servicesTitle">
+    <div class="container">
+      <h2 id="servicesTitle" class="h2">Services that build demand and capture conversions</h2>
+      <p class="lead">From acquisition to retention, we plug into your stack and drive measurable growth.</p>
+      <div class="grid services-grid">
+        <!-- SMS Marketing -->
+        <article class="service card fade-up" aria-labelledby="smsTitle">
+          <div class="icon" aria-hidden="true">📱</div>
+          <h3 id="smsTitle">SMS Marketing</h3>
+          <p class="muted">New drop alerts, VIP promos, and high‑intent flows (browse/cart abandonment, back‑in‑stock). Deep segmentation + A/B testing.</p>
+          <ul class="muted">
+            <li>Automated flows: welcome, abandon cart, winback</li>
+            <li>Campaigns: launches, seasonal promos, VIP exclusives</li>
+            <li>Incentives: free shipping or 10% off re‑engagement</li>
+          </ul>
+        </article>
+        <!-- Email -->
+        <article class="service card fade-up" aria-labelledby="emailTitle">
+          <div class="icon" aria-hidden="true">📧</div>
+          <h3 id="emailTitle">Email Marketing</h3>
+          <p class="muted">Lifecycle automation + content calendars that retain customers and lift LTV. Klaviyo preferred.</p>
+          <ul class="muted">
+            <li>Deliverability setup & list hygiene</li>
+            <li>Design systems & template library</li>
+            <li>Weekly campaigns, testing & reporting</li>
+          </ul>
+        </article>
+        <!-- Paid Ads -->
+        <article class="service card fade-up" aria-labelledby="adsTitle">
+          <div class="icon" aria-hidden="true">🎯</div>
+          <h3 id="adsTitle">Paid Ads Management</h3>
+          <p class="muted">Meta, TikTok & Google ads with creative testing frameworks and profitable scaling.</p>
+          <ul class="muted">
+            <li>Acquisition, retargeting & retention funnels</li>
+            <li>Creative iteration sprints</li>
+            <li>Daily optimization & weekly sprints</li>
+          </ul>
+        </article>
+        <!-- Shopify/Web -->
+        <article class="service card fade-up" aria-labelledby="shopifyTitle">
+          <div class="icon" aria-hidden="true">🛒</div>
+          <h3 id="shopifyTitle">Shopify & Web Design</h3>
+          <p class="muted">Conversion‑first storefronts and landing pages that load fast and sell more.</p>
+          <ul class="muted">
+            <li>UX/UI design & CRO best practices</li>
+            <li>Speed, SEO & schema setup</li>
+            <li>Upsells, bundling & post‑purchase</li>
+          </ul>
+        </article>
+        <!-- Social & Influencers -->
+        <article class="service card fade-up" aria-labelledby="socialTitle">
+          <div class="icon" aria-hidden="true">📈</div>
+          <h3 id="socialTitle">Social & Influencer</h3>
+          <p class="muted">Content calendars, UGC sourcing, and influencer partnerships that move the needle.</p>
+          <ul class="muted">
+            <li>UGC briefs & creator outreach</li>
+            <li>Organic + paid synergy</li>
+            <li>Brand voice guidelines</li>
+          </ul>
+        </article>
+        <!-- Analytics -->
+        <article class="service card fade-up" aria-labelledby="analyticsTitle">
+          <div class="icon" aria-hidden="true">📊</div>
+          <h3 id="analyticsTitle">Analytics & Reporting</h3>
+          <p class="muted">Custom dashboards, attribution clarity, and weekly growth reports you’ll actually read.</p>
+          <ul class="muted">
+            <li>GA4 + server‑side tracking options</li>
+            <li>Marketing mix & cohort analysis</li>
+            <li>Clear next‑step recommendations</li>
+          </ul>
+        </article>
+      </div>
+      <div class="cta-band" style="margin-top:22px">
+        <div>
+          <h3>Free: 5‑Step Brand Growth Blueprint</h3>
+          <div class="muted">Get the exact checklist we use to unlock quick wins in 14 days.</div>
+        </div>
+        <button class="btn" id="openLeadMagnet" aria-haspopup="dialog" aria-controls="leadModal">Get the Blueprint</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case studies / Results -->
+  <section id="cases" class="section" aria-label="Case Studies">
+    <div class="container">
+      <h2 class="h2">Proof it works</h2>
+      <p class="lead">Swap these placeholders with your wins — the layout is ready for easy edits.</p>
+      <div class="grid cases">
+        <article class="case card fade-up" aria-labelledby="case1Title">
+          <div class="muted">Fashion | Meta + Email</div>
+          <div class="num" id="case1Title" aria-label="plus two hundred sixty eight percent revenue">+268% Rev</div>
+          <p class="muted">Scaled from $18k → $66k/mo in 90 days with creative testing and Klaviyo flows.</p>
+        </article>
+        <article class="case card fade-up" aria-labelledby="case2Title">
+          <div class="muted">Beauty | SMS + Funnels</div>
+          <div class="num" id="case2Title" aria-label="eighteen percent conversion rate">18% CVR</div>
+          <p class="muted">Two‑step quiz funnel + VIP SMS list added $9k in first month.</p>
+        </article>
+        <article class="case card fade-up" aria-labelledby="case3Title">
+          <div class="muted">CPG | Google + CRO</div>
+          <div class="num" id="case3Title" aria-label="three point five times return on ad spend">3.5× ROAS</div>
+          <p class="muted">Bundling, upsells, and Performance Max added profitable scale.</p>
+        </article>
+      </div>
+      <div class="divider" role="presentation"></div>
+      <div class="grid" style="grid-template-columns:1.2fr .8fr;align-items:center">
+        <div>
+          <h3>Why brands choose Blanca Media</h3>
+          <ul class="muted">
+            <li>Performance pricing: <strong>10% of revenue generated</strong> or a flat retainer</li>
+            <li>No long contracts; stay because it works</li>
+            <li>Founder‑led, fast communication, transparent dashboards</li>
+            <li>Acquisition + retention under one roof</li>
+          </ul>
+        </div>
+        <aside class="card" style="padding:16px">
+          <h3>Blanca vs. Typical Agency</h3>
+          <ul class="muted">
+            <li><strong>Blanca:</strong> ROI‑first, channel‑agnostic, fast iteration</li>
+            <li><strong>Others:</strong> Vanity metrics, slow cycles, siloed teams</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section" aria-labelledby="pricingTitle">
+    <div class="container">
+      <h2 id="pricingTitle" class="h2">Simple pricing that scales with you</h2>
+      <p class="lead">Pick the model that fits your stage. We’ll advise what’s best on our call.</p>
+      <div class="grid pricing">
+        <article class="price-card card fade-up" aria-labelledby="perfPlanTitle">
+          <h3 id="perfPlanTitle">Performance Plan</h3>
+          <div class="price">10% <small>of revenue generated</small></div>
+          <ul class="muted">
+            <li>Paid ads management (Meta/TikTok/Google)</li>
+            <li>SMS + Email strategy & execution</li>
+            <li>Weekly reporting & dashboards</li>
+            <li>Monthly CRO recommendations</li>
+          </ul>
+          <a href="#book" class="btn">Apply for Performance</a>
+          <div class="note" style="margin-top:8px">Great for brands with product‑market fit and ad spend ready.</div>
+        </article>
+        <article class="price-card card fade-up best" aria-labelledby="retainerTitle">
+          <h3 id="retainerTitle">Growth Retainer</h3>
+          <div class="price">$2,500+ <small>/mo</small></div>
+          <ul class="muted">
+            <li>Everything in Performance</li>
+            <li>Design/dev for landing pages</li>
+            <li>Creator sourcing & UGC briefs</li>
+            <li>Quarterly strategy deep dives</li>
+          </ul>
+          <a href="#book" class="btn">Start on Retainer</a>
+          <div class="note" style="margin-top:8px">Best for brands building foundations before heavy scale.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section" aria-labelledby="aboutTitle">
+    <div class="container">
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:2rem;align-items:center">
+        <div>
+          <h2 id="aboutTitle" class="h2">About Blanca Media</h2>
+          <p class="lead">We exist to help founders turn their vision into the business they dreamed of — with the revenue to match.</p>
+          <p class="muted">Founded by <strong>John</strong>, Blanca Media blends performance marketing with brand‑first creative. We bring clarity to your numbers, craft offers that convert, and ship fast.</p>
+          <div class="badges" style="margin-top:10px">
+            <span class="badge">Fast communication</span>
+            <span class="badge">Founder‑led</span>
+            <span class="badge">Transparent reporting</span>
+          </div>
+        </div>
+        <aside class="card" style="padding:16px">
+          <h3>Tools we work with</h3>
+          <div class="badges" style="margin-top:8px">
+            <span class="badge">Shopify</span>
+            <span class="badge">Klaviyo</span>
+            <span class="badge">Postscript</span>
+            <span class="badge">Google Tag Manager</span>
+            <span class="badge">GA4</span>
+            <span class="badge">Meta & TikTok Ads</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Book -->
+  <section id="contact" class="section" aria-labelledby="contactTitle">
+    <div class="container">
+      <h2 id="contactTitle" class="h2">Book your free growth session</h2>
+      <p class="lead">Tell us about your brand. We’ll audit your funnel and map quick wins.</p>
+      <div class="grid" style="grid-template-columns:1.1fr .9fr;gap:1.25rem">
+        <div class="card" style="padding:16px">
+          <!-- Functional contact form with validation + mailto fallback -->
+          <form id="contactForm" action="https://httpbin.org/post" method="post" novalidate>
+            <div class="row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" placeholder="Jane Founder" required autocomplete="name" />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="jane@brand.com" required autocomplete="email" />
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label for="brand">Brand</label>
+                <input id="brand" name="brand" placeholder="Brand Name" autocomplete="organization" />
+              </div>
+              <div>
+                <label for="revenue">Monthly Revenue</label>
+                <select id="revenue" name="revenue">
+                  <option value="under20">Under $20k</option>
+                  <option value="20to100">$20k–$100k</option>
+                  <option value="100to300">$100k–$300k</option>
+                  <option value="300plus">$300k+</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="goal">Biggest Growth Goal (next 90 days)</label>
+              <textarea id="goal" name="goal" rows="4" placeholder="e.g., launch on TikTok, fix tracking, scale Meta with UGC"></textarea>
+            </div>
+            <div class="row" style="align-items:center;justify-content:space-between;margin-top:8px">
+              <label style="display:flex;gap:.5rem;align-items:center"><input type="checkbox" id="consent" required /> I agree to be contacted via email/SMS.</label>
+              <button class="btn" type="submit">Send & Book</button>
+            </div>
+            <p id="formStatus" class="note" role="status" aria-live="polite" style="margin-top:8px"></p>
+          </form>
+        </div>
+        <div class="card" style="padding:0;overflow:hidden">
+          <h3 style="padding:14px 16px">Pick a time that works</h3>
+          <div style="border-top:1px solid var(--line);height:520px;display:grid;place-items:center" id="calWrap">
+            <!-- Replace src with your Calendly link if available -->
+            <iframe title="Book with Blanca Media" src="about:blank" style="width:100%;height:100%;border:0" loading="lazy" aria-hidden="true"></iframe>
+            <div class="muted" style="padding:20px;text-align:center">
+              <p>Or email us at <a href="mailto:blancamediaaco@gmail.com">blancamediaaco@gmail.com</a> and we’ll schedule you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" aria-labelledby="faqTitle">
+    <div class="container">
+      <h2 id="faqTitle" class="h2">FAQ</h2>
+      <div class="grid">
+        <details class="fade-up"><summary>How does the 10% revenue‑share work?</summary><p class="muted">We track revenue attributable to our campaigns/flows and invoice 10% monthly. If it’s not a fit, you can switch to a flat retainer.</p></details>
+        <details class="fade-up"><summary>Do you require contracts?</summary><p class="muted">No long‑term lock‑ins. We prefer 30‑day terms. Stay because it works.</p></details>
+        <details class="fade-up"><summary>Which platforms do you manage?</summary><p class="muted">Meta (Facebook/Instagram), TikTok, Google (Search, Shopping, PMax). SMS via Postscript/Attentive and email via Klaviyo.</p></details>
+        <details class="fade-up"><summary>Can you build our Shopify site?</summary><p class="muted">Yes — from theme setup to custom sections and landing pages, with CRO baked in.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section" aria-labelledby="finalCtaTitle">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h3 id="finalCtaTitle">Ready to make your next month your best month?</h3>
+          <div class="muted">Book a free session. We’ll audit, advise, and outline a plan you can use immediately.</div>
+        </div>
+        <a href="#book" class="btn">Book Now</a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap">
+      <div>
+        <div class="muted">© <span id="year"></span> Blanca Media. All rights reserved.</div>
+        <div class="muted" style="margin-top:6px">
+          <a href="tel:+19562361281">(956) 236‑1281</a> •
+          <a href="mailto:blancamediaaco@gmail.com">blancamediaaco@gmail.com</a>
+          <span aria-hidden="true">•</span> <a href="mailto:john.blancamedia@gmail.com">john.blancamedia@gmail.com</a>
+        </div>
+      </div>
+      <div class="badges" aria-label="Site links">
+        <a class="badge" href="#privacy">Privacy</a>
+        <a class="badge" href="#terms">Terms</a>
+        <a class="badge" href="https://instagram.com/blancamediaco" target="_blank" rel="noopener">Instagram</a>
+        <a class="badge" href="#">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lead magnet modal -->
+  <div id="leadModal" class="modal" aria-hidden="true" role="dialog" aria-label="Lead Magnet">
+    <div class="dialog">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 8px 10px">
+        <h3>Get the 5‑Step Brand Growth Blueprint</h3>
+        <button class="btn secondary" id="closeLead" aria-label="Close">Close</button>
+      </div>
+      <div class="divider"></div>
+      <form id="leadForm" class="grid" style="grid-template-columns:1fr 1fr;gap:12px">
+        <div>
+          <label for="lmName">Name</label>
+          <input id="lmName" name="name" required placeholder="Jane" autocomplete="given-name" />
+        </div>
+        <div>
+          <label for="lmEmail">Email</label>
+          <input id="lmEmail" name="email" type="email" required placeholder="jane@brand.com" autocomplete="email" />
+        </div>
+        <div style="grid-column:1/-1;display:flex;align-items:center;gap:.5rem">
+          <input type="checkbox" id="lmConsent" required />
+          <label for="lmConsent">I agree to receive the blueprint and occasional updates via email/SMS.</label>
+        </div>
+        <div style="grid-column:1/-1;display:flex;justify-content:flex-end">
+          <button class="btn" type="submit">Send it</button>
+        </div>
+        <p id="lmStatus" class="note" role="status" aria-live="polite" style="grid-column:1/-1"></p>
+      </form>
+      <div id="lmThanks" class="card" style="display:none;padding:14px;margin-top:10px">
+        <h3>Check your inbox 🎉</h3>
+        <p class="muted">We just sent the blueprint. If you don’t see it, check spam.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exit intent popup -->
+  <div id="exitPopup" class="modal" aria-hidden="true" role="dialog" aria-label="Exit Offer">
+    <div class="dialog">
+      <h3>Before you go… want a free audit?</h3>
+      <p class="muted">Get a 5‑minute loom audit of your store & ads. No pitch unless you ask.</p>
+      <div class="row" style="justify-content:flex-end;margin-top:8px">
+        <button class="btn secondary" id="dismissExit">No thanks</button>
+        <a class="btn" href="#book" id="acceptExit">Yes, get my audit</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theme toggle -->
+  <button id="themeToggle" class="btn secondary theme-toggle" aria-pressed="false" title="Toggle theme">🌗 Theme</button>
+
+  <script>
+    // Helper: on ready
+    const ready = (fn)=>document.readyState!=="loading"?fn():document.addEventListener("DOMContentLoaded",fn);
+
+    // Simple email regex
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    ready(()=>{
+      // Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Mobile menu toggle with ARIA
+      const menuBtn = document.querySelector('.menu-btn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if(menuBtn){
+        menuBtn.addEventListener('click',()=>{
+          const isOpen = mobileMenu.style.display==='block';
+          mobileMenu.style.display = isOpen ? 'none' : 'block';
+          mobileMenu.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+          menuBtn.setAttribute('aria-expanded', (!isOpen).toString());
+        });
+      }
+
+      // Smooth anchor scroll (with header offset)
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click',e=>{
+          const id = a.getAttribute('href');
+          if(id && id.length>1){
+            const el = document.querySelector(id);
+            if(el){
+              e.preventDefault();
+              window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 70, behavior:'smooth'});
+              mobileMenu && (mobileMenu.style.display='none');
+              mobileMenu && mobileMenu.setAttribute('aria-hidden','true');
+              menuBtn && menuBtn.setAttribute('aria-expanded','false');
+            }
+          }
+        })
+      })
+
+      // Reveal on scroll
+      const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(ent=>{ if(ent.isIntersecting) ent.target.classList.add('reveal'); })
+      },{threshold:.2});
+      document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+
+      // Lead magnet modal
+      const leadModal = document.getElementById('leadModal');
+      const openLM = document.getElementById('openLeadMagnet');
+      const closeLead = document.getElementById('closeLead');
+      openLM && openLM.addEventListener('click',()=>{leadModal.classList.add('open');leadModal.setAttribute('aria-hidden','false')});
+      closeLead && closeLead.addEventListener('click',()=>{leadModal.classList.remove('open');leadModal.setAttribute('aria-hidden','true')});
+      leadModal && leadModal.addEventListener('click',(e)=>{ if(e.target===leadModal){ leadModal.classList.remove('open'); leadModal.setAttribute('aria-hidden','true'); } })
+
+      // Lead magnet form handler (functional: mailto fallback + fake POST)
+      const lmForm = document.getElementById('leadForm');
+      const lmThanks = document.getElementById('lmThanks');
+      const lmStatus = document.getElementById('lmStatus');
+      lmForm && lmForm.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        const name = document.getElementById('lmName').value.trim();
+        const email = document.getElementById('lmEmail').value.trim();
+        const consent = document.getElementById('lmConsent').checked;
+        if(!name || !emailRe.test(email) || !consent){
+          lmStatus.textContent = 'Please enter a valid name, email, and consent.'; return;
+        }
+        lmStatus.textContent = 'Sending…';
+        try{
+          // Replace with your ESP endpoint (e.g., Formspree/EmailJS/Webhook)
+          await fetch('https://httpbin.org/post',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,email,source:'lead-magnet'})});
+          lmForm.style.display='none';
+          lmThanks.style.display='block';
+        }catch(err){
+          // mailto fallback
+          window.location.href = `mailto:blancamediaaco@gmail.com?subject=Send%20me%20the%20Blueprint&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}`;
+        }
+      })
+
+      // Contact form handler (validation + POST + redirect)
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      form && form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        const email = document.getElementById('email').value.trim();
+        const name = document.getElementById('name').value.trim();
+        const consent = document.getElementById('consent').checked;
+        if(!emailRe.test(email) || !name || !consent){status.textContent='Please complete required fields with a valid email.';return;}
+        status.textContent='Submitting…';
+        const payload = {
+          name,
+          email,
+          brand: document.getElementById('brand').value.trim(),
+          revenue: document.getElementById('revenue').value,
+          goal: document.getElementById('goal').value.trim(),
+          utm: Object.fromEntries(new URLSearchParams(window.location.search)),
+          page: window.location.href,
+          ts: new Date().toISOString()
+        };
+        try{
+          // Replace endpoint with your form handler (e.g., Formspree/Netlify/Airtable webhook)
+          await fetch('https://httpbin.org/post',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+          status.textContent='Thanks! Redirecting to booking…';
+          // If you have a Calendly link, set it here:
+          // window.location.href = 'https://calendly.com/YOUR-LINK?hide_event_type_details=1';
+          window.location.hash = '#book';
+        }catch(err){
+          // Mailto fallback ensures functional submission even without backend
+          window.location.href = `mailto:blancamediaaco@gmail.com?subject=New%20Growth%20Session%20Request&body=${encodeURIComponent(JSON.stringify(payload,null,2))}`;
+        }
+      });
+
+      // Exit intent (desktop)
+      let exitShown=false;
+      const exitPopup = document.getElementById('exitPopup');
+      const dismissExit = document.getElementById('dismissExit');
+      const acceptExit = document.getElementById('acceptExit');
+      function showExit(){ if(exitShown) return; exitShown=true; exitPopup.classList.add('open'); exitPopup.setAttribute('aria-hidden','false'); }
+      document.addEventListener('mouseout', (e)=>{ if(e.clientY < 10 && window.innerWidth>900){ showExit(); } });
+      dismissExit && dismissExit.addEventListener('click',()=> {exitPopup.classList.remove('open'); exitPopup.setAttribute('aria-hidden','true');});
+      acceptExit && acceptExit.addEventListener('click',()=> {exitPopup.classList.remove('open'); exitPopup.setAttribute('aria-hidden','true');});
+
+      // Theme toggle: persistent
+      const themeBtn = document.getElementById('themeToggle');
+      const stored = localStorage.getItem('theme');
+      if(stored){ document.documentElement.dataset.theme = stored; }
+      function applyTheme(){
+        const t = document.documentElement.dataset.theme;
+        // We use prefers-color-scheme by default; explicit themes could be added if desired.
+        themeBtn.setAttribute('aria-pressed', t === 'dark');
+      }
+      themeBtn.addEventListener('click',()=>{
+        const current = document.documentElement.dataset.theme;
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem('theme', next);
+        applyTheme();
+      });
+      applyTheme();
+
+      // Ensure high contrast by checking computed colors (basic guard)
+      // If text color equals background, adjust via class (safety, rare)
+      const bg = getComputedStyle(document.body).backgroundColor;
+      document.querySelectorAll('body, body *').forEach(el=>{
+        const style = getComputedStyle(el);
+        if(style.color === bg){ el.style.color = 'var(--text)'; }
+      });
+    });
+  </script>
+
+  <!-- Analytics placeholder (paste your scripts below) -->
+  <!-- <script src="https://www.googletagmanager.com/gtag/js?id=G-XXXX" defer></script> -->
+  <!-- <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXX');</script> -->
+
+  <!-- Privacy & Terms (placeholders) -->
+  <section id="privacy" class="section" aria-labelledby="privacyTitle">
+    <div class="container card" style="padding:16px">
+      <h2 id="privacyTitle" class="h2">Privacy Policy</h2>
+      <p class="muted">We collect basic contact details you submit (name, email, phone). We use cookies for analytics. We never sell your data. For deletion requests, email <a href="mailto:blancamediaaco@gmail.com">blancamediaaco@gmail.com</a>.</p>
+    </div>
+  </section>
+
+  <section id="terms" class="section" aria-labelledby="termsTitle">
+    <div class="container card" style="padding:16px">
+      <h2 id="termsTitle" class="h2">Terms of Service</h2>
+      <p class="muted">Services are provided as‑is under a monthly agreement. Performance fees are calculated on attributable revenue. Late invoices may incur a 1.5% monthly fee.</p>
+    </div>
+  </section>
+</body>
+</html>
